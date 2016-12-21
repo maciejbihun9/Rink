@@ -1,5 +1,7 @@
 package main;
 
+import java.awt.*;
+
 /**
  * Created by Maciek on 2016-12-18.
  */

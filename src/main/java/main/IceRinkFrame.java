@@ -19,6 +19,9 @@ public class IceRinkFrame extends JFrame {
         //initialize componenets
         initlizeComponenets();
 
+        validate();
+        repaint();
+
         setResizable(false);
         pack();
         setVisible(true);
@@ -30,6 +33,9 @@ public class IceRinkFrame extends JFrame {
 
         //Create drawing area
         IcePanel icePanel = new IcePanel(600, 600, true);
+        icePanel.drawOvals();
+
+
 
         icePanel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
 
@@ -45,17 +51,20 @@ public class IceRinkFrame extends JFrame {
 
 
         JPanel widgetsPanel = ComponentsCreator.createJPanel(100, 600, new GridLayout(1, 1));
+        widgetsPanel.validate();
+        widgetsPanel.repaint();
+
         widgetsPanel.add(buttonPanel);
+
+
+
 
         add(topPanel, BorderLayout.NORTH);
         add(icePanel, BorderLayout.WEST);
         add(widgetsPanel, BorderLayout.EAST);
 
 
-        //initizlie oval drawer
-        OvalDrawer ovalDrawer = new OvalDrawer(icePanel);
-        Timer timer = new Timer();
-        timer.schedule(ovalDrawer, 5 * 1000, 5 * 1000);
+
     }
 
 }

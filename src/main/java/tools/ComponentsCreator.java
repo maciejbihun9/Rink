@@ -18,6 +18,12 @@ public class ComponentsCreator {
         return jPanel;
     }
 
+    public static void drawOval(JPanel panel){
+        Graphics graphics = panel.getGraphics();
+        graphics.setColor(Color.black);
+        graphics.drawOval(20, 20, 20, 20);
+    }
+
     /*
     Note that width and height won't work if we use layout in out panel or frame.
      */
