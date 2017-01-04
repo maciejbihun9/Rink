@@ -1,4 +1,4 @@
-package tools;
+package icepanelbusiness;
 
 import javax.swing.*;
 import java.awt.*;

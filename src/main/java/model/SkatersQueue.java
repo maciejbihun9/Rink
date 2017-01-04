@@ -9,20 +9,26 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by Maciek on 2016-12-22.
  */
-public class ClientQueue {
+public class SkatersQueue {
+
+    private static final int clientQueueSize = 15;
 
     private static LinkedList<Skater> clientQueue = new LinkedList<Skater>();
 
     private static final Lock lock = new ReentrantLock();
 
-    public void addClient(Skater skater){
+    public static void addClient(Skater skater){
         synchronized(lock){
-            clientQueue.add(skater);
-            System.out.println("New customer arrived!!!, the queue status is : " + clientQueue.size());
+            if(clientQueue.size() >= clientQueueSize){
+                System.out.println("There is too much clients waiting");
+            } else {
+                clientQueue.add(skater);
+                System.out.println("New customer arrived!!!, the queue status is : " + clientQueue.size());
+            }
         }
     }
 
-    public Skater getClient(){
+    public static Skater getClient(){
         synchronized (lock){
             System.out.println("Get client from the queue. Status is : " + clientQueue.size());
             return clientQueue.getFirst();
