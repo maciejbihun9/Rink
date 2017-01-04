@@ -1,6 +1,6 @@
-package main;
+package tests;
 
-import tools.ComponentsCreator;
+import icepanelbusiness.ComponentsCreator;
 
 import javax.swing.*;
 import java.awt.*;

@@ -57,8 +57,8 @@ public class IcePanel extends JPanel {
 
     private void drawRandomElement(){
         //bounderies
-        int xBound = 10;
-        int yBound = 10;
+        int xBound = 20;
+        int yBound = 20;
 
         int ovalWidth = 15;
         int ovalHeight = 15;
