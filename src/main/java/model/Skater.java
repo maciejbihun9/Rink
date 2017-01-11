@@ -2,6 +2,7 @@ package model;
 
 import exceptions.BadConditionValueException;
 import main.*;
+import tools.RoundedBorder;
 
 import javax.swing.*;
 import java.awt.*;

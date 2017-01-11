@@ -1,18 +1,23 @@
 package icepanelbusiness;
 
 import concurrentComponenets.MovementStyle;
+import concurrentComponenets.SkaterCrashListener;
 import exceptions.BadConditionValueException;
 import model.Skater;
 import model.SkaterStatics;
+import model.SkatersQueue;
 import tools.ColorPicker;
 
-import java.util.List;
+import java.util.*;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 /**
@@ -22,7 +27,9 @@ public class IceRinkFrame extends JFrame {
 
     private static final int ICE_RINK_SIZE = 15;
 
-    private static List<Skater> skatersOnTheIce = new ArrayList<Skater>();
+    public static List<Skater> skatersOnTheIce = new ArrayList<Skater>();
+
+    private static Lock listLock = new ReentrantLock();
 
     public IceRinkFrame(){
         setLayout(new BorderLayout());
@@ -58,34 +65,45 @@ public class IceRinkFrame extends JFrame {
         skatersOnTheIce.add(skater3);
         skatersOnTheIce.add(skater4);
 
+        westPanel.add(skater1);
+        westPanel.add(skater2);
+        westPanel.add(skater3);
+        westPanel.add(skater4);
+
+        //HANDLE ADDING SKATERS ON THE ICE RINK
         ActionListener addSkaterListener = new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                skatersOnTheIce.add(new Skater(6, ColorPicker.pickColor()));
+            public void actionPerformed(ActionEvent e) {
+                synchronized (listLock){
+                    if(skatersOnTheIce.size() < ICE_RINK_SIZE){
+                        Skater queueSkater = SkatersQueue.getClient();
+                        skatersOnTheIce.add(queueSkater);
+                        westPanel.add(queueSkater);
+                    }
+                }
             }
         };
+        javax.swing.Timer newSkaterTimer = new javax.swing.Timer(1000, addSkaterListener);
+        newSkaterTimer.start();
 
-        javax.swing.Timer skaterTimer = new javax.swing.Timer(1000, addSkaterListener);
-        skaterTimer.start();
-
-        for(final Skater skater : skatersOnTheIce){
-            westPanel.add(skater);
-            ActionListener listener = new ActionListener() {
-                public void actionPerformed(ActionEvent ae) {
-                    int[] coordinates = MovementStyle.randomStyle(skater);
-                    //System.out.println("coordinates :" + coordinates[0] + " " + coordinates[1]);
-                    skater.setBounds(coordinates[0], coordinates[1], SkaterStatics.WIDTH, SkaterStatics.HEIGHT);
-                    IceRinkValidator.validateSkaterPosition(skater);
-                    SkaterCrashHandler.handleSkatersCrashing(skater, skatersOnTheIce);
-                    skatersOnTheIce.remove(skater);
-                    /*Skater crashedSkater = SkaterCrashHandler.getCrashedSkater(skater, skatersOnTheIce);
-                    if(crashedSkater != null){
-                        System.out.println("crashed skaters : " + crashedSkater.getXposition() + " " + skater.getXposition());
-                    }*/
+        //HANDLE SKATER MOVEMENT HERE
+        ActionListener moveSkaterListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                synchronized (listLock){
+                    for(final Skater skater : skatersOnTheIce){
+                        int[] coordinates = MovementStyle.randomStyle(skater);
+                        //System.out.println("coordinates :" + coordinates[0] + " " + coordinates[1]);
+                        skater.setBounds(coordinates[0], coordinates[1], SkaterStatics.WIDTH, SkaterStatics.HEIGHT);
+                        IceRinkValidator.validateSkaterPosition(skater);
+                    }
                 }
-            };
-            javax.swing.Timer timer = new javax.swing.Timer(skater.getCondition(), listener);
-            timer.start();
-        }
+            }
+        };
+        javax.swing.Timer moveSkaterTimer = new javax.swing.Timer(10, moveSkaterListener);
+        moveSkaterTimer.start();
+
+        java.util.Timer skaterCrashTimer = new java.util.Timer();
+        SkaterCrashListener skaterCrashListener = new SkaterCrashListener(westPanel);
+        skaterCrashTimer.schedule(skaterCrashListener, 1000, 10);
 
         //description panel
         JPanel topPanel = ComponentsCreator.createJPanel(600, 50, new GridBagLayout());
@@ -103,6 +121,14 @@ public class IceRinkFrame extends JFrame {
         add(topPanel, BorderLayout.NORTH);
         add(westPanel, BorderLayout.WEST);
         add(widgetsPanel, BorderLayout.EAST);
+    }
+
+    private void refreshIceRink(JPanel westPanel, List<Skater> skatersToRemove){
+        for(Skater skater : skatersToRemove){
+            westPanel.remove(skater);
+        }
+        westPanel.revalidate();
+        westPanel.repaint();
     }
 
 }

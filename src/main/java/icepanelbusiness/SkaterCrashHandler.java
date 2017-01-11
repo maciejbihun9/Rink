@@ -2,6 +2,7 @@ package icepanelbusiness;
 
 import model.Skater;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,23 +21,22 @@ public class SkaterCrashHandler {
             //observer skater parameters
             int observerSkaterX = observerSkater.getXposition();
             int observerSkaterY = observerSkater.getYposition();
-
-            if(Math.abs(movingSkaterX - observerSkaterX) < 10 & Math.abs(movingSkaterY - observerSkaterY) < 10){
+            if(Math.abs(movingSkaterX - observerSkaterX) < 50 & Math.abs(movingSkaterY - observerSkaterY) < 50){
                 return observerSkater;
             }
         }
         return null;
     }
 
-    public static void handleSkatersCrashing(Skater movingSkater, List<Skater> observerSkaters){
-        Skater crashedSkater = getCrashedSkater(movingSkater, observerSkaters);
-        if(crashedSkater != null){
-            System.out.println(movingSkater.getXposition() + " " + crashedSkater.getXposition());
-            movingSkater.setCondition(20);
-            crashedSkater.setCondition(20);
-        } else {
-
-        }
+    public static List<Skater> handleSkatersCrashing(Skater movingSkater, List<Skater> observerSkaters){
+            List<Skater> crashedSkaters = new ArrayList<Skater>();
+            Skater crashedSkater = getCrashedSkater(movingSkater, observerSkaters);
+            if(crashedSkater != null){
+                System.out.println(movingSkater.getXposition() + " " + crashedSkater.getXposition());
+                crashedSkaters.add(crashedSkater);
+                crashedSkaters.add(movingSkater);
+            }
+            return crashedSkaters;
     }
 
 }
