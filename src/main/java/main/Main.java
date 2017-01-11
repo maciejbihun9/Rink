@@ -1,10 +1,8 @@
 package main;
 
-import concurrentComponenets.ClientDemandCreator;
-import concurrentComponenets.SkaterMover;
+import concurrentComponenets.SkaterDemandCreator;
 import icepanelbusiness.IceRinkFrame;
 
-import java.util.Random;
 import java.util.Timer;
 
 /**
@@ -13,20 +11,13 @@ import java.util.Timer;
 public class Main {
 
     public static void main(String[] args) {
+
         //run gui application
-        IceRinkFrame iceRinkFrame = new IceRinkFrame();
-
-
-
-        Random random = new Random();
-        int arrivalTime = random.nextInt(1);
+        new IceRinkFrame();
 
         //run client demand
-        Timer clientDimendTimer = new Timer();
-        clientDimendTimer.schedule(new ClientDemandCreator(), 1 * 1000, 1 * 1000);
-
-        //
-
+        Timer clientDemandTimer = new Timer();
+        clientDemandTimer.schedule(new SkaterDemandCreator(), 1 * 1000, 1 * 1000);
     }
 
 }

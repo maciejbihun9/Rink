@@ -1,6 +1,6 @@
 package personel;
 
-import main.Skater;
+import model.Skater;
 import model.SkatersQueue;
 
 /**
