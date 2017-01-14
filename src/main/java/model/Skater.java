@@ -15,6 +15,8 @@ public class Skater extends JButton {
 
     private SkaterDirection skaterDirection;
 
+    private boolean skaterOnTheIce = false;
+
     private int moveX = 0;
 
     private int moveY = 0;
@@ -28,6 +30,7 @@ public class Skater extends JButton {
 
     public Skater(int condition, Color color) {
         super(counter + "");
+        skaterOnTheIce = false;
         this.condition = condition;
         this.skaterId = counter++;
         Random random = new Random();
@@ -128,6 +131,14 @@ public class Skater extends JButton {
                break;
        }
        return skaterDirection;
+    }
+
+    public void setIsOnTheIceStatus(boolean skaterOnTheIce){
+        this.skaterOnTheIce = skaterOnTheIce;
+    }
+
+    public boolean isOnTheIce(){
+        return skaterOnTheIce;
     }
 
 }

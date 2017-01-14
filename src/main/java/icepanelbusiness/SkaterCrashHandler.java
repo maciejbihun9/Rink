@@ -21,7 +21,7 @@ public class SkaterCrashHandler {
             //observer skater parameters
             int observerSkaterX = observerSkater.getXposition();
             int observerSkaterY = observerSkater.getYposition();
-            if(Math.abs(movingSkaterX - observerSkaterX) < 50 & Math.abs(movingSkaterY - observerSkaterY) < 50){
+            if(Math.abs(movingSkaterX - observerSkaterX) < 10 & Math.abs(movingSkaterY - observerSkaterY) < 10){
                 return observerSkater;
             }
         }

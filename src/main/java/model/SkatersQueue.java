@@ -1,6 +1,7 @@
 package model;
 
 import java.util.LinkedList;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -11,26 +12,20 @@ public class SkatersQueue {
 
     private static final int clientQueueSize = 15;
 
-    private static LinkedList<Skater> clientQueue = new LinkedList<Skater>();
-
-    private static final Lock lock = new ReentrantLock();
+    private static LinkedBlockingQueue<Skater> clientQueue = new LinkedBlockingQueue<Skater>();
 
     public static void addClient(Skater skater){
-        synchronized(lock){
             if(clientQueue.size() >= clientQueueSize){
                 System.out.println("There is too much clients waiting");
             } else {
                 clientQueue.add(skater);
                 System.out.println("New customer arrived!!!, the queue status is : " + clientQueue.size());
             }
-        }
     }
 
-    public static Skater getClient(){
-        synchronized (lock){
+    public static Skater getClient() throws InterruptedException {
             System.out.println("Get client from the queue. Status is : " + clientQueue.size());
-            return clientQueue.getFirst();
-        }
+            return clientQueue.take();
     }
 
 }

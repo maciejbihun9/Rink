@@ -51,6 +51,20 @@ public class IceRinkFrame extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    private void addSkaterOnTheIce(JPanel westPanel){
+        if(skatersOnTheIce.size() < ICE_RINK_SIZE){
+            Skater queueSkater = null;
+            try {
+                queueSkater = SkatersQueue.getClient();
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            skatersOnTheIce.add(queueSkater);
+            westPanel.add(queueSkater);
+            System.out.println("Skaters on the ice status: " + skatersOnTheIce.size());
+        }
+    }
+
     private void initializeComponents(){
 
         final JPanel westPanel = ComponentsCreator.createJPanel(600, 600, null);
@@ -71,35 +85,67 @@ public class IceRinkFrame extends JFrame {
         westPanel.add(skater4);
 
         //HANDLE ADDING SKATERS ON THE ICE RINK
-        ActionListener addSkaterListener = new ActionListener() {
+       /* ActionListener addSkaterListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                synchronized (listLock){
                     if(skatersOnTheIce.size() < ICE_RINK_SIZE){
-                        Skater queueSkater = SkatersQueue.getClient();
+                        Skater queueSkater = null;
+                        try {
+                            queueSkater = SkatersQueue.getClient();
+                        } catch (InterruptedException e1) {
+                            e1.printStackTrace();
+                        }
                         skatersOnTheIce.add(queueSkater);
                         westPanel.add(queueSkater);
+                        System.out.println("Skaters on the ice status: " + skatersOnTheIce.size());
                     }
-                }
             }
         };
-        javax.swing.Timer newSkaterTimer = new javax.swing.Timer(1000, addSkaterListener);
-        newSkaterTimer.start();
+        javax.swing.Timer newSkaterTimer = new javax.swing.Timer(33, addSkaterListener);
+        newSkaterTimer.start();*/
 
         //HANDLE SKATER MOVEMENT HERE
         ActionListener moveSkaterListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                synchronized (listLock){
+                    addSkaterOnTheIce(westPanel);
                     for(final Skater skater : skatersOnTheIce){
                         int[] coordinates = MovementStyle.randomStyle(skater);
                         //System.out.println("coordinates :" + coordinates[0] + " " + coordinates[1]);
                         skater.setBounds(coordinates[0], coordinates[1], SkaterStatics.WIDTH, SkaterStatics.HEIGHT);
                         IceRinkValidator.validateSkaterPosition(skater);
                     }
+            }
+        };
+
+        javax.swing.Timer moveSkaterTimer = new javax.swing.Timer(10, moveSkaterListener);
+        moveSkaterTimer.start();
+
+        //--------------------New skaters timer--------------------------------------
+
+        /*ActionListener moveSkaters = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                synchronized (listLock){
+                    for(final Skater skater : skatersOnTheIce){
+                        if(!skater.isOnTheIce()){
+                            ActionListener skaterDedicatedListener = new ActionListener() {
+                                public void actionPerformed(ActionEvent e) {
+                                    int[] coordinates = MovementStyle.randomStyle(skater);
+                                    //System.out.println("coordinates :" + coordinates[0] + " " + coordinates[1]);
+                                    skater.setBounds(coordinates[0], coordinates[1], SkaterStatics.WIDTH, SkaterStatics.HEIGHT);
+                                    IceRinkValidator.validateSkaterPosition(skater);
+                                }
+                            };
+                            javax.swing.Timer skaterDedicatedTimer = new javax.swing.Timer(50, skaterDedicatedListener);
+                            skaterDedicatedTimer.start();
+                        }
+                    }
                 }
             }
         };
-        javax.swing.Timer moveSkaterTimer = new javax.swing.Timer(10, moveSkaterListener);
-        moveSkaterTimer.start();
+
+        javax.swing.Timer skatersTimer = new javax.swing.Timer(1000, moveSkaters);
+        skatersTimer.start();*/
+
+        //----------------------------------------------------------------------------
 
         java.util.Timer skaterCrashTimer = new java.util.Timer();
         SkaterCrashListener skaterCrashListener = new SkaterCrashListener(westPanel);
