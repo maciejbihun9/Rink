@@ -68,8 +68,8 @@ public class MovementStyle {
     public static int [] randomStyle(Skater skater){
         int [] coordinates = new int [2];
         Rectangle skaterBounds = skater.getBounds();
-        int x = skaterBounds.x;
-        int y = skaterBounds.y;
+        int x;
+        int y;
         x = skaterBounds.x + skater.getMoveX();
         y = skaterBounds.y + skater.getMoveY();
         coordinates[0] = x;

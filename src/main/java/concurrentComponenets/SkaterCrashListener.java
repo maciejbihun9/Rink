@@ -1,11 +1,12 @@
 package concurrentComponenets;
 
-import icepanelbusiness.IceRinkFrame;
+import icepanelbusiness.IceRinkRepo;
 import icepanelbusiness.SkaterCrashHandler;
 import model.Skater;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.TimerTask;
 
@@ -22,8 +23,12 @@ public class SkaterCrashListener extends TimerTask {
 
     public void run() {
         List<Skater> skatersToRemove = new ArrayList<Skater>();
-        for(final Skater skater : IceRinkFrame.skatersOnTheIce){
-            List<Skater> crashedSkaters = SkaterCrashHandler.handleSkatersCrashing(skater, IceRinkFrame.skatersOnTheIce);
+        List<Skater> copyOfSkatersOnTheIce = IceRinkRepo.getSkatersOnTheIce();
+
+        Iterator<Skater> iterator = copyOfSkatersOnTheIce.iterator();
+        while(iterator.hasNext()){
+            Skater nextSkater = iterator.next();
+            List<Skater> crashedSkaters = SkaterCrashHandler.handleSkatersCrashing(nextSkater, copyOfSkatersOnTheIce);
             if(crashedSkaters.isEmpty())
                 continue;
             if(!skatersToRemove.contains(crashedSkaters.get(0))){
@@ -33,8 +38,10 @@ public class SkaterCrashListener extends TimerTask {
                 skatersToRemove.add(crashedSkaters.get(1));
             }
         }
-        IceRinkFrame.skatersOnTheIce.removeAll(skatersToRemove);
-        refreshIceRink(iceRinkPanel, skatersToRemove);
+        if(!skatersToRemove.isEmpty()){
+            IceRinkRepo.removeSubList(skatersToRemove);
+            refreshIceRink(iceRinkPanel, skatersToRemove);
+        }
     }
 
     private void refreshIceRink(JPanel westPanel, List<Skater> skatersToRemove){
@@ -59,11 +66,6 @@ public class SkaterCrashListener extends TimerTask {
         iceRinkPanel.remove(imageLabel);
         iceRinkPanel.revalidate();
         iceRinkPanel.repaint();
-        /*ImageIcon imageForOne = new ImageIcon(getClass().getResource("src/main/resources/bang.png"));
-        JButton bangButton = new JButton("bth", imageForOne);
-        bangButton.setBounds(xPosition, yPosition, 70, 70);
-        iceRinkPanel.add(bangButton);*/
-
     }
 
 }
