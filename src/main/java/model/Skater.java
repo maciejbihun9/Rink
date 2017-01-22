@@ -1,8 +1,7 @@
 package model;
 
-import exceptions.BadConditionValueException;
-import main.*;
-import tools.RoundedBorder;
+import ice_rink_management.IceRinkRepo;
+import ice_rink_management.RinkRules;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,6 +24,10 @@ public class Skater extends JButton {
 
     private final int skaterId;
 
+    private long skaterTimeOnIce;
+
+    private boolean outPathSelected = false;
+
     //Condition must be between 1 - 10. Lower value is better.
     private int condition;
 
@@ -36,12 +39,12 @@ public class Skater extends JButton {
         Random random = new Random();
         int rand = random.nextInt(3);
         int[] skaterStartingPoint = getSkaterStartingPoint(rand);
-        skaterDirection = selectSkaterDirection(rand);
-        int[] skaterInitialMove = SkaterStatics.generateSkaterMove(skaterDirection);
+        skaterDirection = SkaterDirection.selectSkaterDirection(rand);
+        int[] skaterInitialMove = RinkRules.generateSkaterMove(skaterDirection, this);
         moveX = skaterInitialMove[0];
         moveY = skaterInitialMove[1];
         setBackground(color);
-        setBounds(skaterStartingPoint[0], skaterStartingPoint[1], SkaterStatics.WIDTH, SkaterStatics.HEIGHT);
+        setBounds(skaterStartingPoint[0], skaterStartingPoint[1], RinkRules.WIDTH, RinkRules.HEIGHT);
     }
 
     @Override
@@ -64,20 +67,25 @@ public class Skater extends JButton {
         return skaterBounds.y;
     }
 
-    public int getCondition() {
-        return condition;
+    public void startSkating(){
+        skaterTimeOnIce = System.currentTimeMillis();
     }
 
-    public void setCondition(int condition){
-        this.condition = condition;
-    }
-
-    public int getSkaterId(){
-        return skaterId;
+    public boolean isTired(){
+        //if skater time expired
+        return System.currentTimeMillis() - skaterTimeOnIce > condition * 1000F;
     }
 
     private int [] getSkaterStartingPoint(int randomStartingPoint){
-        return SkaterStatics.startingPoints[randomStartingPoint];
+        return RinkRules.startingPoints[randomStartingPoint];
+    }
+
+    public void setOutPath(){
+        outPathSelected = true;
+    }
+
+    public boolean isOutPathSelected(){
+        return outPathSelected;
     }
 
     public int getMoveX() {
@@ -94,51 +102,6 @@ public class Skater extends JButton {
 
     public void setMoveY(int moveY) {
         this.moveY = moveY;
-    }
-
-    public SkaterDirection selectSkaterDirection(int startingPosition){
-        Random random = new Random();
-        int rand = random.nextInt(1);
-        SkaterDirection skaterDirection = null;
-       switch (startingPosition){
-           case 0:
-               if(rand == 1){
-                   skaterDirection = SkaterDirection.BOTTOM_LEFT;
-               } else {
-                   skaterDirection = SkaterDirection.BOTTOM_RIGHT;
-               }
-               break;
-           case 1:
-               if(rand == 1){
-                   skaterDirection = SkaterDirection.TOP_RIGHT;
-               } else {
-                   skaterDirection = SkaterDirection.BOTTOM_RIGHT;
-               }
-               break;
-           case 2:
-               if(rand == 1){
-                   skaterDirection = SkaterDirection.TOP_LEFT;
-               } else {
-                   skaterDirection = SkaterDirection.BOTTOM_LEFT;
-               }
-               break;
-           case 3:
-               if(rand == 1){
-                   skaterDirection = SkaterDirection.TOP_LEFT;
-               } else {
-                   skaterDirection = SkaterDirection.TOP_RIGHT;
-               }
-               break;
-       }
-       return skaterDirection;
-    }
-
-    public void setIsOnTheIceStatus(boolean skaterOnTheIce){
-        this.skaterOnTheIce = skaterOnTheIce;
-    }
-
-    public boolean isOnTheIce(){
-        return skaterOnTheIce;
     }
 
 }

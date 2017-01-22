@@ -1,7 +1,7 @@
 package main;
 
-import concurrentComponenets.SkaterDemandCreator;
-import icepanelbusiness.IceRinkFrame;
+import clients_queue_management.SkaterDemandCreator;
+import ice_rink_management.IceRinkFrame;
 
 import java.util.Timer;
 
@@ -17,7 +17,7 @@ public class Main {
 
         //run client demand
         Timer clientDemandTimer = new Timer();
-        clientDemandTimer.schedule(new SkaterDemandCreator(), 1 * 1000, 1 * 1000);
+        clientDemandTimer.schedule(new SkaterDemandCreator(), 1 * 250, 1 * 543);
     }
 
 }
