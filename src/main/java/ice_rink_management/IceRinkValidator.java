@@ -30,9 +30,9 @@ public class IceRinkValidator {
         } else if(skater.getYposition() < iceRinkTopBoundery){
             SkaterDirection skaterDirection = SkaterDirection.selectSkaterDirection(0);
             setSkaterMoves(skater, skaterDirection);
-        } else if(skater.isTired() && !skater.isOutPathSelected()){
+        } else if(skater.isTired() && !skater.isExitPathSelected()){
             setSkaterMoves(skater, SkaterDirection.TOP);
-            skater.setOutPath();
+            skater.setExitPath();
         }
     }
 

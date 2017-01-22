@@ -14,28 +14,22 @@ public class Skater extends JButton {
 
     private SkaterDirection skaterDirection;
 
-    private boolean skaterOnTheIce = false;
-
     private int moveX = 0;
 
     private int moveY = 0;
 
     private static int counter = 0;
 
-    private final int skaterId;
-
     private long skaterTimeOnIce;
 
-    private boolean outPathSelected = false;
+    private boolean exitPathSelected = false;
 
     //Condition must be between 1 - 10. Lower value is better.
     private int condition;
 
     public Skater(int condition, Color color) {
-        super(counter + "");
-        skaterOnTheIce = false;
+        super(counter++ + "");
         this.condition = condition;
-        this.skaterId = counter++;
         Random random = new Random();
         int rand = random.nextInt(3);
         int[] skaterStartingPoint = getSkaterStartingPoint(rand);
@@ -58,13 +52,11 @@ public class Skater extends JButton {
     }
 
     public synchronized int getXposition(){
-        Rectangle skaterBounds = getBounds();
-        return skaterBounds.x;
+        return getBounds().x;
     }
 
     public synchronized int getYposition(){
-        Rectangle skaterBounds = getBounds();
-        return skaterBounds.y;
+        return getBounds().y;
     }
 
     public void startSkating(){
@@ -80,12 +72,12 @@ public class Skater extends JButton {
         return RinkRules.startingPoints[randomStartingPoint];
     }
 
-    public void setOutPath(){
-        outPathSelected = true;
+    public void setExitPath(){
+        exitPathSelected = true;
     }
 
-    public boolean isOutPathSelected(){
-        return outPathSelected;
+    public boolean isExitPathSelected(){
+        return exitPathSelected;
     }
 
     public int getMoveX() {

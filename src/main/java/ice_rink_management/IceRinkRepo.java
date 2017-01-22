@@ -32,12 +32,6 @@ public class IceRinkRepo {
         }
     }
 
-    public static List<Skater> getSkatersOnTheIce(){
-        synchronized (lock){
-            return skatersOnTheIce;
-        }
-    }
-
     public static int getRepoSize() {
         synchronized (lock) {
             return skatersOnTheIce.size();

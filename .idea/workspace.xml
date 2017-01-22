@@ -2,50 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e9e1c40-2092-4c73-a145-b581d116d13b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkCoordinator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/SkaterMoverExecutor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/concurrentComponenets/IceRinkCoordinator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/concurrentComponenets/SkaterCrashListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/concurrentComponenets/SkaterMover.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/exceptions/BadConditionValueException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/icepanelbusiness/SkaterCrashHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/main/Box.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/personel/Coordinator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/concurrentComponenets/IceRinkCoordinator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/concurrentComponenets/MovementStyle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/concurrentComponenets/SkaterCrashListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/concurrentComponenets/SkaterDemandCreator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/concurrentComponenets/SkaterMover.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/exceptions/BadConditionValueException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/icepanelbusiness/ComponentsCreator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/icepanelbusiness/IceRinkFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/icepanelbusiness/IceRinkRepo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/icepanelbusiness/IceRinkValidator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/icepanelbusiness/SkaterCrashHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/main/Box.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/Skater.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/SkaterDirection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/SkaterStatics.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/SkatersQueue.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/personel/Coordinator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/personel/Receptionist.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tests/TestFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tests/TestFrame.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/concurrentComponenets/MovementStyle.java" afterPath="$PROJECT_DIR$/src/main/java/tools/MovementStyle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/concurrentComponenets/SkaterDemandCreator.java" afterPath="$PROJECT_DIR$/src/main/java/clients_queue_management/SkaterDemandCreator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/icepanelbusiness/ComponentsCreator.java" afterPath="$PROJECT_DIR$/src/main/java/tools/ComponentsCreator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/icepanelbusiness/IceRinkFrame.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkFrame.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/icepanelbusiness/IceRinkRepo.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/icepanelbusiness/IceRinkValidator.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkValidator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/SkaterStatics.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/RinkRules.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/SkatersQueue.java" afterPath="$PROJECT_DIR$/src/main/java/clients_queue_management/SkatersQueue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/personel/Receptionist.java" afterPath="$PROJECT_DIR$/src/main/java/clients_queue_management/Receptionist.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tests/TestFrame.java" afterPath="$PROJECT_DIR$/src/test/java/main/TestFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkValidator.java" afterPath="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkValidator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Skater.java" afterPath="$PROJECT_DIR$/src/main/java/model/Skater.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/SkaterDirection.java" afterPath="$PROJECT_DIR$/src/main/java/model/SkaterDirection.java" />
     </list>
     <ignored path="Rink.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,30 +31,24 @@
       <file leaf-file-name="IceRinkCoordinator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkCoordinator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="204">
+              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Skater.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Skater.java">
+      <file leaf-file-name="IceRinkRepo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+            <state relative-caret-position="323">
+              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1376#1377#0" expanded="true" />
-                <element signature="e#1416#1417#0" expanded="true" />
-                <element signature="e#1496#1497#0" expanded="true" />
-                <element signature="e#1548#1549#0" expanded="true" />
-                <element signature="e#1837#1838#0" expanded="true" />
-                <element signature="e#1897#1898#0" expanded="true" />
+                <element signature="e#361#369#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+                <element signature="e#1338#1339#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +57,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="187">
               <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -208,17 +162,17 @@
         <option value="$PROJECT_DIR$/src/test/java/main/TestFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/tools/ComponentsCreator.java" />
         <option value="$PROJECT_DIR$/src/main/java/icepanelbusiness/IceRinkRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/concurrentComponenets/MovementStyle.java" />
         <option value="$PROJECT_DIR$/src/main/java/tools/MovementStyle.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/SkaterStatics.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/RinkStatics.java" />
         <option value="$PROJECT_DIR$/src/main/java/ice_rink_management/RinkStatics.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/SkaterDirection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Skater.java" />
         <option value="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ice_rink_management/RinkRules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Skater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java" />
       </list>
     </option>
   </component>
@@ -266,8 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -462,6 +414,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1043,7 +997,8 @@
       <workItem from="1485090741149" duration="1882000" />
       <workItem from="1485092677536" duration="1838000" />
       <workItem from="1485094554328" duration="2102000" />
-      <workItem from="1485096703652" duration="392000" />
+      <workItem from="1485096703652" duration="532000" />
+      <workItem from="1485104283758" duration="632000" />
     </task>
     <servers />
   </component>
@@ -1065,7 +1020,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133226000" />
+    <option name="totallyTimeSpent" value="133998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1078,7 +1033,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4519685" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1253,14 +1208,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/icepanelbusiness/IceRInkRepo2.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Box.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/personel/Coordinator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tools/ColorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tools/RoundedBorder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1316,17 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1473#1474#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/SkaterMoverExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1343,18 +1279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkCoordinator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/SkaterDirection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1365,7 +1289,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="187">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1399,16 +1323,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Skater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+        <state relative-caret-position="1122">
+          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1416#1417#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-            <element signature="e#1548#1549#0" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tools/ColorPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkCoordinator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ice_rink_management/IceRinkRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <folding>
+            <element signature="e#361#369#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1338#1339#0" expanded="true" />
           </folding>
         </state>
       </provider>
